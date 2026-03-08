@@ -1,0 +1,18 @@
+{
+    "home": "სახლი",
+    "language": "ენა",
+    "theme": "თემა",
+    "logout": "გამოსვლა",
+    "login": "შესვლა",
+    "register": "რეგისტრაცია",
+    "have_account": "უკვე გაქვთ ანგარიში?",
+    "dont_have_account": "არ გაქვთ ანგარიში?",
+    "movies": "ფილმები",
+    "password": "პაროლი",
+    "email": "ელ.ფოსტა",
+    "username": "მომხმარებლის სახელი",
+    "confirm_password": "დაადასტურეთ პაროლი",
+    "movies_list title": "ფილმების სია",
+    "prev": "წინა",
+    "next": "შემდეგი"
+}

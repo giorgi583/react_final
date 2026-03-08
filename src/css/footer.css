@@ -1,0 +1,31 @@
+.footer-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 250px;
+}
+.upper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 50px 0;
+}
+.footer-div h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.footer-div p, .footer-div a {
+    font-size: 1rem;
+    color: var(--grey);
+    text-align: center;
+    margin: 10px 0;
+}
+.footer-div a:hover {
+    color: var(--white);
+    text-decoration: underline;
+
+}
+.fa-brands {
+    margin-right: 8px;
+
+}

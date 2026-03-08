@@ -1,13 +1,90 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --grey: #ccc;
+    --accent-color: #007BFF;
+    --hover-color: #55565738;
+    --header-bg: #3a006f;
+    --footer-bg: #30244b;
+}
+:root.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --grey: #ccc;
+    --accent-color: #007BFF;
+    --hover-color: #5d5e5e30;
+    --header-bg: #a03ffb;
+    --footer-bg: #692ffdac;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--footer-bg);
+    color: var(--secondary-color);
+}
+#root {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    flex: 1;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+input {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+
+}
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--hover-color);
+}
+.loader {
+    border: 4px solid transparent;
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.8s ease infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

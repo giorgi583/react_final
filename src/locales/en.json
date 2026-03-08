@@ -1,0 +1,18 @@
+{
+    "home": "Home",
+    "language": "Lang",
+    "theme": "Theme",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "movies": "Movies",
+    "dont_have_account": "Don't have an account?",
+    "have_account": "Have an account?",
+    "password": "Password",
+    "email": "Email",
+    "username": "Username",
+    "confirm_password": "Confirm Password",
+    "movies_list title": "Movies List",
+    "prev": "Prev",
+    "next": "Next"
+}

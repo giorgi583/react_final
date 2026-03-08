@@ -1,0 +1,37 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 20px;
+    min-height: 80.5vh;
+}
+.regist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+.ttl {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.invalid {
+    background-color: rgb(255, 231, 246);
+    border-color: rgb(126, 1, 1);
+}
+.pass-inp {
+    position: relative;
+}
+.pass-inp i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--primary-color);
+}
+.pass-inp input {
+    width: 100%;
+}

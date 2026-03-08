@@ -1,0 +1,105 @@
+.page-btn {
+border-radius: 0;
+background: transparent;
+color: var(--accent-color);
+border: 1px solid var(--accent-color);
+}
+.page-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+.moviecards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.moviecard {
+    width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    position: relative;
+}
+.moviecard:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.moviecard:hover .viewmore {
+    transform: translateY(-50%) translateX(-50%) scale(1);
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px 0;
+}
+.moviecard h3 {
+    font-size: 18px;
+    color: var(--accent-color);
+    position: relative;
+}
+.moviecard h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 0;
+}
+.moviecard h3:hover::after {
+    width: 100%;
+    transition: width 0.3s ease;
+}
+.moviecard p {
+    font-size: 15px;
+    color: var(--primary-color);
+    text-align: justify;
+    margin-top: 10px;
+}
+.moviecard .year, .moviecard .genre {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-style: italic;
+}
+.viewmore {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(0);
+    
+}
+.viewmore:hover {
+    color: var(--accent-color);
+}   
+.fa-magnifying-glass {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+}
+.search {
+    position: relative;
+    width: 300px;
+    margin: 0 auto 50px auto;
+}
+.search input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
