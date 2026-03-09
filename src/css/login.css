@@ -1,4 +1,4 @@
-.register {
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,25 +6,22 @@
     gap: 20px;
     min-height: 80.5vh;
 }
-.regist-form {
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 300px;
 }
-.register .ttl {
+.ttl-login {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
 }
-.regist-form input.invalid {
-    background-color: rgb(255, 231, 246);
-    border-color: rgb(126, 1, 1);
-}
-.regist-form .pass-inp {
+
+.login-form .pass-inp {
     position: relative;
 }
-.regist-form .pass-inp i {
+.login-form .pass-inp i {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -32,6 +29,6 @@
     cursor: pointer;
     color: var(--primary-color);
 }
-.regist-form .pass-inp input {
+.login-form .pass-inp input {
     width: 100%;
 }

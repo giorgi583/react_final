@@ -14,5 +14,7 @@
     "confirm_password": "დაადასტურეთ პაროლი",
     "movies_list title": "ფილმების სია",
     "prev": "წინა",
-    "next": "შემდეგი"
+    "next": "შემდეგი",
+    "addmovie": "ფილმის დამატება",
+    "favourites": "ფავორიტები"
 }

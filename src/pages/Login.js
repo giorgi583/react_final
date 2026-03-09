@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useTranslation } from 'react-i18next';
-const Login = () => {
+import '../css/login.css'
+const Login = ({setloggedin}) => {
+  const navigate = useNavigate()
   const {t} = useTranslation();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -22,15 +24,17 @@ const Login = () => {
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       alert('Login successful!');
+setloggedin(true)
+navigate('/')
     } catch (error) {
       console.error(error);
       alert('Login failed. Please check your credentials and try again.');
     } }
   return (
     <div className='main'>
-        <div className='container register'>
-            <h2 className='ttl'>{t('login')}</h2>
-            <form className='regist-form' onSubmit={handleLogin}>
+        <div className='container login'>
+            <h2 className='ttl-login'>{t('login')}</h2>
+            <form className='login-form' onSubmit={handleLogin}>
                 <input 
                     type="text" 
                     placeholder={`${t('email')}`} 

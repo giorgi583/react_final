@@ -102,3 +102,25 @@ header button:hover {
     background-color: var(--hover-color);
 }
 
+.user {
+    position: relative;
+}
+.logout-btn {
+    position: absolute;
+    display: none;
+    top: 25px;
+    left: 0;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+.logout-btn.active {
+    display: flex;
+}
+.user .fa-angle-down {
+    cursor: pointer;
+}
+.auth-btns {
+    align-self: center;
+    font-size: 0.9rem;
+}

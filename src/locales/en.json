@@ -14,5 +14,7 @@
     "confirm_password": "Confirm Password",
     "movies_list title": "Movies List",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "addmovie": "Add Movie",
+    "favourites": "Favourites"
 }

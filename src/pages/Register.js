@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../css/regist.css'
 import axios from 'axios'
 import { useTranslation } from 'react-i18next';
-const Register = () => {
+const Register = ({setuser}) => {
   const {t} = useTranslation();
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -31,10 +31,10 @@ const Register = () => {
       const response = await axios.post(endpoint, {
         name: username,
         email: email,
-        password: password,
-        password_confirmation: confirmPassword
+        password: password
       });
       console.log(response.data);
+      setuser(username)
       alert('Registration successful!');
     } catch (error) {
       console.error(error);
