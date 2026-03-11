@@ -1,0 +1,62 @@
+.Movie-details {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.1);
+    background-color: var(--grey);
+    padding: 20px;
+    margin: 30px auto;
+    display: flex;
+    gap: 40px;
+}
+.Movie-details details {
+    width:350px;
+}
+summary {
+    font-size: 1rem;
+}
+.movie-image {
+    width: 250px;
+    height: 300px;
+    background-color: aqua;
+    font-size: 2rem;
+    text-align: center;
+    padding: 120px 0;
+    flex-shrink: 0;
+}
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.desc h3 {
+    font-size: 1.5rem;
+}
+.comments {
+    padding: 20px;
+    background-color: var(--grey);
+border-radius: 15px;
+}
+.comment-list {
+    padding: 20px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.yrgnr {
+    display: flex;
+    gap: 50px;
+}
+.com-inp {
+    width: 100%;
+    padding: 10px 100px 10px 10px;
+}
+.com-input {
+    position: relative;
+}
+.com-input button {
+position: absolute;
+top: 0;
+right: 0;
+width: 100px;
+height: 100%;
+}

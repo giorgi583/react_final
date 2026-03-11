@@ -1,0 +1,85 @@
+.image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+top: 0;
+left: 0;
+border-radius: 10px;
+opacity: 0;
+transition: 0.6s ease-in-out;
+}
+.image.active {
+    opacity: 1;
+}
+.carousel {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.4);
+    margin: 50px auto;
+    
+}
+.car-btn {
+    background: transparent;
+    color: var(--accent-color);
+    font-size: 2rem;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#left-btn {
+    left: 10px;
+}
+#right-btn {
+    right: 10px;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.home-ttl {
+    margin: 50px 0;
+    color: var(--primary-color);
+font-size: 2.5rem;
+text-decoration: overline;
+}
+.pop {
+    line-height: 40px;
+    position: relative;
+    width: fit-content;
+}
+.pop::after {
+    content: '';
+    background-color: var(--primary-color);
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+}
+.pop-movies {
+    display: flex;
+    gap: 40px;
+    overflow-x: scroll;
+    margin: 30px 0;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+.pop-movies::-webkit-scrollbar {
+appearance: none;
+display: none;
+}
+.card-img {
+    width: 250px;
+    flex-shrink: 0;
+}
+.card-img img {
+    width: 100%;
+}
+.popular button {
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 15px 30px}

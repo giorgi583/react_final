@@ -16,7 +16,7 @@
 }
 .footer-div p, .footer-div a {
     font-size: 1rem;
-    color: var(--grey);
+    color: var(--primary);
     text-align: center;
     margin: 10px 0;
 }

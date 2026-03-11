@@ -9,15 +9,17 @@
     --hover-color: #55565738;
     --header-bg: #3a006f;
     --footer-bg: #30244b;
+    --button: linear-gradient(125deg, #6ab2ff, #0051ae);
 }
 :root.dark {
     --primary-color: #fff;
     --secondary-color: #333;
-    --grey: #ccc;
+    --grey: #515151;
     --accent-color: #007BFF;
     --hover-color: #5d5e5e30;
     --header-bg: #a03ffb;
-    --footer-bg: #692ffdac;
+    --footer-bg: #8758ff;
+    --button: linear-gradient(125deg, #007BFF, #0051ae);
 }
 * {
     margin: 0;
@@ -64,13 +66,13 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: var(--accent-color);
+    background: var(--button);
     color: var(--secondary-color);
     cursor: pointer;
     transition: 0.2s ease;
 }
 button:hover {
-    background-color: var(--hover-color);
+    background: var(--hover-color);
     color: var(--accent-color);
 }
 .loader {

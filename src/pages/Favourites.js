@@ -6,6 +6,7 @@ const Favourites = () => {
   const endpoint = 'https://warrior.ge/api/favorites'
   const {t} = useTranslation()
   const [favMovies, setFavmovies] = useState([])
+  const [loading, setloading] = useState(true)
 const token = localStorage.getItem('token')
   async function fetchFavs() {
     if(!token) {
@@ -23,6 +24,9 @@ console.log(response.data)
     catch(error) {
       alert(error)
     }
+    finally {
+      setloading(false)
+    }
   }
   useEffect(()=> {
     fetchFavs()
@@ -32,14 +36,13 @@ console.log(response.data)
       <h1>Please log in!</h1>
     </div>)
   }
-  return (
-    <div className='main container'>
+  return  (
+  loading ? <div className='main'><div className='loader'></div></div>  : (<div className='main container'>
 <h1>{t("favourites")}</h1>
 <div className='fav-movies'>
 {favMovies.length > 0 ? favMovies.map(movie => <FavMovieCard movie={movie.movie}/>) : <h2>Nothing to show :(</h2>}
 </div>
-    </div>
-  )
+    </div>)
+)
 }
-
 export default Favourites

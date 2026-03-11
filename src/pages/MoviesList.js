@@ -35,9 +35,19 @@ useEffect(()=> {
     <div className='main'>
       <h1 style={{"margin": "50px 200px"}}>{t("movies_list title")}</h1>
       <div className='search'>
-      <input type="search" placeholder={t("search movies")} value={searchTerm} onChange={(e)=> setsearchterm(e.target.value)} /> <i class="fa-solid fa-magnifying-glass"></i> </div>
-      {loading && <div className="loader"></div>}
+      <input type="search" placeholder={t("search_movie")} value={searchTerm} onChange={(e)=> setsearchterm(e.target.value)} /> <i class="fa-solid fa-magnifying-glass"></i> </div>
     <div className='moviecards container'>
+      {loading && <div className='skel-divs'>
+        <div className="loader"></div>
+        {Array.from({length: 8}).map((el, i)=> <div className='sk-div' key={i}>
+<div className="skeleton-ball"></div>
+<div className="skeleton"></div>
+<div className="skeleton"></div>
+<div className="skeleton last"></div>
+<div className="skeleton-btn"></div>
+<div className="skeleton-btn"></div>
+        </div>)}
+        </div>}
       {movies.filter(movie => movie.title.toLowerCase().includes(searchTerm.toLowerCase())).map(movie => <MovieCard movie={movie}/>)}
     </div>
     <div className="pagination">
