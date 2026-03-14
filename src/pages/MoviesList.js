@@ -8,8 +8,13 @@ const MoviesList = () => {
 const [movies, setMovies] = useState([])
 const [page, setpage] = useState(1)
 const [pagesLength, setpagesLength] = useState(0)
+const [pageshidden, setpageshidden] = useState(false)
 const [loading, setLoading] = useState(false)
 const [searchTerm, setsearchterm] = useState('')  
+
+const togglepages = () => {
+  setpageshidden(!pageshidden)
+}
 async function fetchMovies() {
   const endpoint = `https://warrior.ge/api/movies?page=${page}`
   setLoading(true)
@@ -19,6 +24,7 @@ async function fetchMovies() {
    setpagesLength(response.data.last_page)
    setMovies(response.data.data)
    console.log(typeof(pagesLength), pagesLength);
+   setpageshidden(`${pagesLength > 6 ? true : false}`)
   } 
   catch(error) {
     alert(error)
@@ -54,7 +60,29 @@ useEffect(()=> {
       <button className='page-btn' onClick={()=> setpage(prevpage => {
         return prevpage > 1 ? prevpage-1 : pagesLength
       })}>{t("prev")}</button>
-{Array.from({length: pagesLength}).map((pg, index)=> (<button className={`page-btn ${page === index+1 ? `active` : ``}`} key={index} onClick={()=> setpage(index+1)}>{index+1}</button>))}
+{Array.from({ length: pagesLength }).map((pg, index) =>
+  !pageshidden ? (
+    <button
+      className={`page-btn ${page === index + 1 ? "active" : ""}`}
+      key={index}
+      onClick={() => setpage(index + 1)}
+    >
+      {index + 1}
+    </button>
+  ) : index === 6 ? (
+    <button className="page-btn" key={index} onClick={togglepages}>
+      ...
+    </button>
+  ) : index > 6 ? null : (
+    <button
+      className={`page-btn ${page === index + 1 ? "active" : ""}`}
+      key={index}
+      onClick={() => setpage(index + 1)}
+    >
+      {index + 1}
+    </button>
+  )
+)}
   <button className='page-btn' onClick={()=> setpage(prevpage => {
     return prevpage < pagesLength ? prevpage+1 : 1})}>{t("next")}</button>
 

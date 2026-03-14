@@ -6,13 +6,14 @@ import { useTranslation } from 'react-i18next'
 const Addmovie = () => {
   const {t} = useTranslation()
   const [title, settitle] = useState('')
+  const [loading , setloading] = useState(false)
   const [description, setdesc] = useState('')
-  const [year, setyear] = useState(0)
+  const [year, setyear] = useState('')
   const [genre, setgenre] = useState('')
   const token = localStorage.getItem('token')
   async function handleaddmovie(e) {
     e.preventDefault()
-    console.log('clicked');
+    setloading(true)
     
     if(!token) {
       return alert('please log in')
@@ -39,6 +40,9 @@ alert('movie added successfully')
     catch(error) {
       alert('error adding the movie')
     }
+    finally {
+      setloading(false)
+    }
   }
  if(!token) {
   return (
@@ -52,10 +56,11 @@ alert('movie added successfully')
       <div className='container'>
       <h1 className='mb-20'>{t('addmovie')}</h1>
       <form className='add-form' onSubmit={handleaddmovie}>
-<input type="text" placeholder='title' value={title} onChange={(e)=> settitle(e.target.value)}/>
-<input type="text" placeholder='description' value={description} onChange={(e)=> setdesc(e.target.value)}/>
-<input type="number" placeholder='year' value={year} onChange={(e)=> setyear(e.target.value)}/>
-<input type="text" placeholder='genre' value={genre} onChange={(e)=> setgenre(e.target.value)}/>
+        {loading ? <div className='loader'></div> : null}
+<input type="text" placeholder={t('title')} value={title} onChange={(e)=> settitle(e.target.value)}/>
+<input type="text" placeholder={t('description')} value={description} onChange={(e)=> setdesc(e.target.value)}/>
+<input type="number" placeholder={t("year")} value={year} onChange={(e)=> setyear(e.target.value)}/>
+<input type="text" placeholder={t("genre")} value={genre} onChange={(e)=> setgenre(e.target.value)}/>
 <button type='submit'>{t('addmovie')}</button>
       </form>
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useTranslation } from 'react-i18next';
 import '../css/login.css'
 const Login = ({setloggedin}) => {
+  const [loading, setloading] = useState(false)
   const navigate = useNavigate()
   const {t} = useTranslation();
   const [email, setEmail] = useState('')
@@ -12,6 +13,7 @@ const Login = ({setloggedin}) => {
   const endpoint = 'https://warrior.ge/api/login'
   async function handleLogin(e) {
     e.preventDefault()
+    setloading(true)
     if (!email || !password) {
         alert('Please fill in all fields');
         return;
@@ -29,11 +31,16 @@ navigate('/')
     } catch (error) {
       console.error(error);
       alert('Login failed. Please check your credentials and try again.');
-    } }
+    } 
+  finally {
+    setloading(false)
+  }
+  }
   return (
     <div className='main'>
         <div className='container login'>
             <h2 className='ttl-login'>{t('login')}</h2>
+              {loading ? <div className='loader'></div> : null}
             <form className='login-form' onSubmit={handleLogin}>
                 <input 
                     type="text" 

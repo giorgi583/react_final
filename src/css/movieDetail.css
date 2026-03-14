@@ -8,11 +8,16 @@
     display: flex;
     gap: 40px;
 }
-.Movie-details details {
+ details {
     width:350px;
 }
 summary {
     font-size: 1rem;
+    cursor: pointer;
+}
+details p {
+    border-bottom: 1px solid var(--primary-color);
+    padding: 5px;
 }
 .movie-image {
     width: 250px;
@@ -20,13 +25,17 @@ summary {
     background-color: aqua;
     font-size: 2rem;
     text-align: center;
-    padding: 120px 0;
     flex-shrink: 0;
+}
+.movie-image img {
+width: 100%;
+height: 100%;
 }
 .movie-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 500px;
 }
 .desc h3 {
     font-size: 1.5rem;
@@ -35,12 +44,18 @@ summary {
     padding: 20px;
     background-color: var(--grey);
 border-radius: 15px;
+max-width: 800px;
+margin: auto;
+margin-top: 20px;
+box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
 }
 .comment-list {
     padding: 20px;
 display: flex;
 flex-direction: column;
 gap: 10px;
+margin-top: 20px;
+position: relative;
 }
 .yrgnr {
     display: flex;
@@ -59,4 +74,46 @@ top: 0;
 right: 0;
 width: 100px;
 height: 100%;
+}
+.useravatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+}
+.useravatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+.comment {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+.com-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.comment p {
+    margin: 10px;
+}
+.comment-section h3{
+text-align: center;
+font-size: 1.5rem;
+}
+.comment-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.comment-actions i {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.comment-actions i:active {
+    color: var(--accent-color);
+}
+.comment-actions i:hover {
+    scale: 1.1;
 }

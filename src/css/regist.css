@@ -34,4 +34,15 @@
 }
 .regist-form .pass-inp input {
     width: 100%;
+    }
+.regist-form .valid {
+    border-color: var(--accent-color);
+}
+.regist-form .invalid {
+    border-color: rgb(126, 1, 1);
+}   
+.error {
+    color: rgb(192, 0, 0);
+    font-size: 14px;
+    margin-top: 5px;
 }

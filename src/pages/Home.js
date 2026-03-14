@@ -34,8 +34,8 @@ const Home = () => {
   <h2 className='pop'>{t("most popular")}<i className='fa-solid fa-angle-right'></i></h2>
   <div className='pop-movies'>
     {images.map((img, i)=> (<div key={i} className='card-img'><img src={img} alt="" />
-    <h3>title</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, illum.</p>
+    <h3>{t('title')}</h3>
+    <p>{t('description')}</p>
     </div>))}
   </div>
   <Link to={'/movies'}><button>{t("view_all")}</button></Link>

@@ -5,7 +5,7 @@ import '../css/header.css'
 const Header = ({loggedin, setloggedin, user}) => {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation();
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const token = localStorage.getItem('token');
 function toggleLangBtns() {
   const langBtns = document.querySelector('.lang-drpdwn');
@@ -17,8 +17,8 @@ function showtheme() {
 }
 function toggleTheme() {
     document.documentElement.classList.toggle('dark');
-    setTheme(theme === 'light' ? 'dark' : 'light');
-    localStorage.setItem('theme', theme==='light' ? 'dark' : 'light')
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
 }
 useEffect(()=> {
   const savedtheme = localStorage.getItem('theme')

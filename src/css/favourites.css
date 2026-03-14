@@ -1,0 +1,63 @@
+.Fav-moviecard {
+    width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 1px 20px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    position: relative;
+}
+.Fav-moviecard h3 {
+    font-size: 18px;
+    color: var(--accent-color);
+    position: relative;
+}
+.Fav-moviecard h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 0;
+}
+.Fav-moviecard p {
+    font-size: 15px;
+    color: var(--primary-color);
+    text-align: justify;
+    margin-top: 10px;
+}
+.Fav-moviecard .year, .Fav-moviecard .genre {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-style: italic;
+}
+.viewmore {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(0);
+}
+.viewmore:hover {
+    color: var(--accent-color);
+}
+.Fav-moviecard:hover .viewmore {
+    transform: translateY(-50%) translateX(-50%) scale(1);
+}
+.favheader {
+    margin-bottom: 80px;
+}
+.fav-movies {
+    margin-bottom: 50px;
+}

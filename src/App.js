@@ -1,5 +1,5 @@
 import React, {Suspense, lazy, useEffect, useState} from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './i18next';
 import './index.css';
@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/login" element={<Login setloggedin={setloggedin}/>} />
           <Route path="/movies/:id" element={<MovieDetail />} />
           <Route path="/addmovie" element={<Addmovie />} />
-          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/favourites" element={<Favourites setloggedin={setloggedin}/>} />
         </Routes>
       </Suspense>
       <Footer />

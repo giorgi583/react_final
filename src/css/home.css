@@ -75,6 +75,9 @@ display: none;
 .card-img {
     width: 250px;
     flex-shrink: 0;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-bottom: 10px;
 }
 .card-img img {
     width: 100%;
