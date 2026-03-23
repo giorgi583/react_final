@@ -29,3 +29,32 @@
     margin-right: 8px;
 
 }
+@media (max-width: 1200px) {
+    .upper {
+       flex-wrap: wrap;
+       gap: 20px;
+       padding: 20px;
+    }
+    .upper p, .upper a {
+        font-size: 0.9rem;
+    }
+   .footer-div h3 {
+    font-size: 1rem;
+   }
+   .footer-div {
+    max-width: 200px;
+   }
+}
+@media (max-width: 768px) {
+    .upper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        justify-items: center;
+    }
+    .footer-div {
+        align-items: center;
+        text-align: center;
+    }
+}

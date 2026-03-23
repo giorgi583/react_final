@@ -1,11 +1,19 @@
 header {
-    background-color: var(--header-bg);
+    background-color: rgba(166, 0, 255, 0.532);
     color: var(--secondary-color);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.header h1 {
+    font-size: max(1.5rem, 2.5vw);
+    margin-right: 120px;
 }
 nav ul {
     list-style: none;
@@ -16,6 +24,7 @@ header a {
     color: var(--secondary-color);
     text-decoration: none;
     position: relative;
+    font-size: max(0.8rem, 1vw);
 }
 header a.active::after {
 content: '';
@@ -61,16 +70,8 @@ box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.2);
     position: relative;
 }
 .theme-btns {
-    display: none;
-    gap: 10px;
-    flex-direction: column;
-    position: absolute;
-    top: 40px;
-    width: 100px;
-    background-color: var(--primary-color);
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.2);
 }
 .theme.active .theme-btns {
     display: flex;
@@ -87,6 +88,7 @@ box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.2);
 .header-right {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 header button {
@@ -101,7 +103,12 @@ header button {
 header button:hover {
     background-color: var(--hover-color);
 }
-
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+}
 .user {
     position: relative;
 }
@@ -123,4 +130,84 @@ header button:hover {
 .auth-btns {
     align-self: center;
     font-size: 0.9rem;
+}
+.close {
+    display: none;
+}
+.burg-menu {
+    display: none;
+}
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+    }
+    .close {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        display: none;
+        z-index: 100;
+        padding: 50px 80px;
+        width: 300px;
+        box-sizing: border-box;
+    }
+    nav.active {
+        display: flex;
+    }
+    .header-right {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav.active {
+        right: 0;
+    }
+    .burg-menu {
+        display: flex;
+        font-size: 2rem;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .burg-menu span {
+            width: 30px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+    }
+    .lang-btns {
+        top: -120px;
+        
+    }
+    .theme-btns {
+        left: -120px;
+        top: 0;
+    }
+}
+
+    
+@media (max-width: 1200px) {
+    .header h1 {
+        margin-right: 80px;
+    }
+}
+@media (max-width: 900px) {
+    .header h1 {
+        margin-right: 50px;
+    }
 }

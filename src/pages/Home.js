@@ -24,7 +24,7 @@ const Home = () => {
     }
   }
   
-  const images = [img,img,img,img,img,img,img,img,img,img, img, img]
+  const images = [img,img,img,img,img,img,img,img]
 
   return (
     <div className='main container'>

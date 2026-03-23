@@ -13,12 +13,11 @@ transition: 0.6s ease-in-out;
 }
 .carousel {
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: min(600px, 90%);
+    height: min(400px, 60vw);
     border-radius: 10px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.4);
     margin: 50px auto;
-    
 }
 .car-btn {
     background: transparent;
@@ -43,11 +42,12 @@ transition: 0.6s ease-in-out;
 .home-ttl {
     margin: 50px 0;
     color: var(--primary-color);
-font-size: 2.5rem;
+font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
 text-decoration: overline;
 }
 .pop {
     line-height: 40px;
+    font-size: clamp(1.375rem, 1vw + 1rem, 1.75rem);
     position: relative;
     width: fit-content;
 }
@@ -60,22 +60,27 @@ text-decoration: overline;
     left: 0;
     height: 3px;
 }
+.popular {
+    overflow-x: auto;    
+    width: 100%;
+  padding: 0 16px;
+}
 .pop-movies {
-    display: flex;
+    display: inline-flex;
     gap: 40px;
-    overflow-x: scroll;
     margin: 30px 0;
     border-radius: 10px;
     padding: 20px 0;
+    flex-wrap: nowrap;
 }
-.pop-movies::-webkit-scrollbar {
+.popular::-webkit-scrollbar {
 appearance: none;
 display: none;
 }
 .card-img {
-    width: 250px;
-    flex-shrink: 0;
-    background-color: aliceblue;
+     flex: 0 0 auto;
+     max-width: 250px;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     padding-bottom: 10px;
 }
@@ -85,4 +90,23 @@ display: none;
 .popular button {
     margin: auto;
     margin-bottom: 50px;
-    padding: 15px 30px}
+    padding: 15px 30px
+}
+@media (max-width: 1200px) {
+    .pop-movies {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 10px;
+    }
+    
+}
+@media (max-width: 768px) {
+
+    .pop-movies {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 10px;
+       justify-items: center;
+    }
+    
+}

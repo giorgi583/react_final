@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       </div>
       <div className="lower">
-        <p>&copy; 2024 Movies.ge. {t("all_rights_reserved")}</p>
+        <p>&copy; 2026 Movies.ge. {t("all_rights_reserved")}</p>
       </div>
     </footer>
   )

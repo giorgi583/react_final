@@ -5,6 +5,7 @@ import '../css/header.css'
 const Header = ({loggedin, setloggedin, user}) => {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation();
+  const [sidebaropen, setsidebaropen] = useState(false)
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const token = localStorage.getItem('token');
 function toggleLangBtns() {
@@ -30,15 +31,21 @@ document.querySelector('.logout-btn').classList.toggle('active')
   return (
     <header >
         <div className='container header'>
-        <Link to={'/'}><h1>Movies.ge</h1></Link>
-        <nav>
+        <h1>Movies.ge</h1>
+        <div className="burg-menu" onClick={()=> setsidebaropen(true)}>
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+        <nav className={sidebaropen ? 'active' : ''}>
+          <button onClick={() => setsidebaropen(false)} className='close'><i class="fa-solid fa-xmark"></i></button>
           <ul>
-            <li><NavLink to="/">{t('home')}</NavLink></li>
-            <li><NavLink to="/movies">{t('movies')}</NavLink></li>
-            {loggedin && <li><NavLink to="/addmovie">{t('addmovie')}</NavLink></li>}
-              {loggedin && <li><NavLink to="/favourites">{t('favourites')}</NavLink></li>}
+            <li><NavLink onClick={() => (setsidebaropen(false))} to="/">{t('home')}</NavLink></li>
+            <li><NavLink onClick={() => (setsidebaropen(false))} to="/movies">{t('movies')}</NavLink></li>
+            {loggedin && <li><NavLink onClick={() => (setsidebaropen(false))} to="/addmovie">{t('addmovie')}</NavLink></li>}
+              {loggedin && <li><NavLink onClick={() => (setsidebaropen(false))} to="/favourites">{t('favourites')}</NavLink></li>}
           </ul>
-        </nav>
+       
         <div className='header-right'>
         <div className='lang-drpdwn'>
           <button className='langs-btn' onClick={toggleLangBtns}>{t('language')} <i class="fa-solid fa-angle-down"></i></button>
@@ -48,7 +55,6 @@ document.querySelector('.logout-btn').classList.toggle('active')
         </div>
         </div>
         <div className='theme'>
-            <button onClick={showtheme}>{t('theme')} <i class="fa-solid fa-angle-down"></i></button>
             <div className='theme-btns'>
 <button onClick={toggleTheme}><i class={`fa-solid fa-${theme === 'light' ? 'moon' : 'sun'}`}></i></button>
 </div>
@@ -66,6 +72,7 @@ document.querySelector('.logout-btn').classList.toggle('active')
            </> )}
         </div>
         </div>
+        </nav>
         </div>
       </header>
   )

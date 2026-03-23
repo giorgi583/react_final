@@ -117,3 +117,11 @@ font-size: 1.5rem;
 .comment-actions i:hover {
     scale: 1.1;
 }
+@media (max-width: 768px) {
+    .Movie-details {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 10px;
+        align-items: center;
+    }
+}

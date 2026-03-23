@@ -32,7 +32,9 @@
 html, body {
   height: 100%;
   margin: 0;
+  overflow: auto;
 }
+
 
 footer {
     text-align: center;
@@ -112,6 +114,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    justify-content: center;
 }
 .skeleton-ball {
     animation: skeleton-anime 1s linear infinite;
